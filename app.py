@@ -28,7 +28,7 @@ def predict_disease(request: SymptomRequest):
     # Extract and validate symptoms
     raw_symptoms = [s.strip().lower() for s in raw_text.split(",") if s.strip()]
 
-    if len(raw_symptoms) < 4:
+    if len(raw_symptoms) < 3:
         return {"error": "Not enough symptoms provided to make a decision. Please provide at least 4 symptoms."}
 
     # Proceed with disease prediction using all provided symptoms
